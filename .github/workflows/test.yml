@@ -31,7 +31,7 @@ jobs:
         echo Wassup
       id: Yo
       shell: bash
-    - run: ${{ github.action_path }}/hello.sh
+    - run: ./hello.sh
       id: Hello
       shell: bash
     - run: echo random-number ${{ steps.random-number-generator.outputs.random-id }}
