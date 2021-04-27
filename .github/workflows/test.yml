@@ -23,6 +23,18 @@ jobs:
     # - uses: ./
     #   with:
     #     milliseconds: 1000
+    - id: random-number-generator
+      run: echo "::set-output name=random-id::$(echo $RANDOM)"
+      shell: bash    
+    - run: |
+        echo Yo
+        echo Wassup
+      id: Yo
+      shell: bash
+      run: echo "::set-output name=random-id::$(echo $RANDOM)"      
+    - run: ${{ github.action_path }}/hello.sh
+      id: Hello
+      shell: bash    
     - uses: cjineson/javascript-action-test@v2
       with:
         milliseconds: 1000
