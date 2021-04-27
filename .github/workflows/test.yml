@@ -20,13 +20,15 @@ jobs:
     runs-on: ubuntu-latest
     steps:
     - uses: actions/checkout@v2
-    - run: echo "::set-output name=random-id::$(echo $RANDOM)"
+    - name: Generate Random Number
+      run: echo "::set-output name=random-id::$(echo $RANDOM)"
       id: random-number-generator
-    - run: |
-        # echo bah blah
+    - name: Do stuff
+      run: |
         echo blah
         echo blah
-    - run: echo random-number ${{ steps.random-number-generator.outputs.random-id }}
+    - name: Output Random Number
+      run: echo random-number ${{ steps.random-number-generator.outputs.random-id }}
     - uses: cjineson/javascript-action-test@v2
       with:
         milliseconds: 1000
