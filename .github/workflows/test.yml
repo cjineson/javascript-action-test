@@ -26,8 +26,6 @@ jobs:
     - run: |
         echo Yo
         echo Wassup
-      id: Yo
-      shell: bash
     - run: echo random-number ${{ steps.random-number-generator.outputs.random-id }}
       shell: bash          
     - uses: cjineson/javascript-action-test@v2
