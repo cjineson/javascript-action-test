@@ -20,19 +20,13 @@ jobs:
     runs-on: ubuntu-latest
     steps:
     - uses: actions/checkout@v2
-    # - uses: ./
-    #   with:
-    #     milliseconds: 1000
-    - id: random-number-generator
-      run: echo "::set-output name=random-id::$(echo $RANDOM)"
+    - run: echo "::set-output name=random-id::$(echo $RANDOM)"
+      id: random-number-generator
       shell: bash    
     - run: |
         echo Yo
         echo Wassup
       id: Yo
-      shell: bash
-    - run: ./hello.sh
-      id: Hello
       shell: bash
     - run: echo random-number ${{ steps.random-number-generator.outputs.random-id }}
       shell: bash          
